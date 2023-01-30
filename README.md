@@ -275,8 +275,37 @@ P.S.: если при запуске некоторые контейнеры б�
 
  
 
-#
+### Решение
 
+- Клонируем репозиторий
+```bash
+root@vkvm:/home/vk# git clone https://github.com/influxdata/sandbox.git TICK
+Cloning into 'TICK'...
+remote: Enumerating objects: 1718, done.
+remote: Counting objects: 100% (32/32), done.
+remote: Compressing objects: 100% (22/22), done.
+remote: Total 1718 (delta 13), reused 25 (delta 10), pack-reused 1686
+Receiving objects: 100% (1718/1718), 7.17 MiB | 171.00 KiB/s, done.
+Resolving deltas: 100% (946/946), done.
+```
+- Запускаем
+```bash
+root@vkvm:/home/vk/TICK# ./sandbox up
+Using latest, stable releases
+Spinning up Docker Images...
+If this is your first time starting sandbox this might take a minute...
+/snap/docker/2343/lib/python3.6/site-packages/paramiko/transport.py:33: CryptographyDeprecationWarning: Python 3.6 is no longer supported by the Python core team. Therefore, support for it is deprecated in cryptography and will be removed in a future release.
+  from cryptography.hazmat.backends import default_backend
+Creating network "tick_default" with the default driver
+Building influxdb
+..........................................
+Creating tick_documentation_1 ... done
+Creating tick_influxdb_1      ... done
+Creating tick_telegraf_1      ... done
+Creating tick_kapacitor_1     ... done
+Creating tick_chronograf_1    ... done
+
+```
  
 
 8. Перейдите в веб-интерфейс Chronograf (`http://localhost:8888`) и откройте вкладку `Data explorer`.
