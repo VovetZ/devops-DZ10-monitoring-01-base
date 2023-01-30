@@ -342,7 +342,23 @@ root@vkvm:/home/vk/TICK#
  
 
 ### Решение
+- Добавим в конфигурацию `telegraf/telegraf.conf` поддержку disk и mem
+    - Память - `[[inputs.mem]]`
+    - Диск
+        ```
+        [[inputs.disk]]
+          ignore_fs = ["tmpfs", "devtmpfs", "devfs", "iso9660", "overlay", "aufs", "squashfs"]
+        ```
+- Перезапустим telegraf для применения настроек
+```bash
+root@vkvm:/home/vk/TICK# ./sandbox restart
+Using latest, stable releases
+Stopping all sandbox processes...
+Starting all sandbox processes...
+Services available!
+```
 
+- Скриншот использования диска
 ![Chronograf](2.png)
 
  
