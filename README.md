@@ -306,7 +306,16 @@ Creating tick_kapacitor_1     ... done
 Creating tick_chronograf_1    ... done
 
 ```
- 
+- Вывод команд curl
+```bash
+root@vkvm:/home/vk/TICK# curl http://localhost:8086/ping
+root@vkvm:/home/vk/TICK# curl http://localhost:8888
+<!DOCTYPE html><html><head><link rel="stylesheet" href="/index.c708214f.css"><meta http-equiv="Content-type" content="text/html; charset=utf-8"><title>Chronograf</title><link rel="icon shortcut" href="/favicon.70d63073.ico"></head><body> <div id="react-root" data-basepath=""></div> <script type="module" src="/index.e81b88ee.js"></script><script src="/index.a6955a67.js" nomodule="" defer></script> </body></html>root@vkvm:/home/vk/TICK# 
+root@vkvm:/home/vk/TICK# curl http://localhost:9092/kapacitor/v1/ping
+root@vkvm:/home/vk/TICK# 
+```
+- Cкриншот веб-интерфейса ПО chronograf (`http://localhost:8888`).
+![Chronograf](1.png)
 
 8. Перейдите в веб-интерфейс Chronograf (`http://localhost:8888`) и откройте вкладку `Data explorer`.
 
@@ -332,7 +341,9 @@ Creating tick_chronograf_1    ... done
 
  
 
-#
+### Решение
+
+![Chronograf](2.png)
 
  
 
